@@ -1,0 +1,29 @@
+{% extends 'eadmin/master.html' %}
+
+{% block title %}Employee Details - EAdmin{% endblock %}
+
+{% block content %}
+<h1>Employee Details</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ employees}}
+        {% for employee in employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.department }}</td>
+                <td>
+                    <a href="{% url 'edit' employee.id %}">Edit</a>
+                    <a href="{% url 'delete' employee.id %}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

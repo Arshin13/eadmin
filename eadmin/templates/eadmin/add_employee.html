@@ -1,0 +1,18 @@
+{% extends 'eadmin/master.html' %}
+
+{% block title %}Add Employee - EAdmin{% endblock %}
+
+{% block content %}
+    <h1>Add Employee</h1>
+    <!-- Add your edit form here -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">employee name</label>
+        <input type="text" name="emp_name"><br>
+        <label for="">department</label>
+        <input type="text" name="emp_department"><br>
+        <button>Add</button>
+    </form>
+
+    {{status}}
+{% endblock %}

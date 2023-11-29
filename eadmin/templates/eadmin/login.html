@@ -1,0 +1,19 @@
+{% extends 'eadmin/master.html' %}
+
+{% block title %}Login - EAdmin{% endblock %}
+
+{% block content %}
+    <h1>Login to EAdmin</h1>
+    <!-- Add your login form here -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" name="name"><br>
+        <label for="">password</label>
+        <input type="password" name="password">
+        <br><button>login</button>
+
+    </form>
+
+    {{ status }}
+{% endblock %}
